@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bert_score"
+version = "0.3.13"
+authors = [
+    {name = "Tianyi Zhang*, Varsha Kishore*, Felix Wu*, Kilian Q. Weinberger, and Yoav Artzi", email = "tzhang@asapp.com"},
+]
+description = "PyTorch implementation of BERT score"
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["BERT", "NLP", "deep learning", "google", "metric"]
+requires-python = ">=3.6"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=1.0.0",
+    "pandas>=1.0.1",
+    "transformers>=3.0.0",
+    "numpy",
+    "requests",
+    "tqdm>=4.31.1",
+    "matplotlib",
+    "packaging>=20.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/Tiiiger/bert_score"
+
+[project.scripts]
+bert-score = "bert_score_cli.score:main"
+bert-score-show = "bert_score_cli.visualize:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"] 
